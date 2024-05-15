@@ -1,13 +1,9 @@
-// import React from 'react'
-
-export default function Footer() {
+export const  Footer=()=> {
   return (
-    <>
-        <div className='footer continer-fuild'>
-            <div className='text-center'>
-                <div>© Bolt Master 2023. All rights reserved.</div>
-            </div>
-        </div>
-    </>
-  )
+    <footer className="footer bg-dark text-white">
+      <div className="container text-center">
+        <p>&copy; {new Date().getFullYear()} Swastik Metal. All rights reserved.</p>
+      </div>
+    </footer>
+  );
 }
