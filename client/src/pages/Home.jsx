@@ -1,4 +1,4 @@
-import React from 'react';
+import bolt from "../assets/bolt.jpg";
 
 export const Home = () => {
   return (
@@ -6,9 +6,9 @@ export const Home = () => {
       <div className="container">
         <h2 className="text-center mb-4">Our Products</h2>
         <div className="row">
-          <div className="col-md-4 mb-4">
+          <div className="col-lg-4 col-md-6 mb-4">
             <div className="card">
-              <img src="product1.jpg" className="card-img-top" alt="Product 1" />
+              <img src={bolt} className="card-img-top img-fluid" alt="Product 1" style={{ minHeight: '200px' }} />
               <div className="card-body">
                 <h3 className="card-title">Product 1</h3>
                 <p className="card-text">Description of product 1</p>
@@ -17,9 +17,9 @@ export const Home = () => {
               </div>
             </div>
           </div>
-          <div className="col-md-4 mb-4">
+          <div className="col-lg-4 col-md-6 mb-4">
             <div className="card">
-              <img src="product2.jpg" className="card-img-top" alt="Product 2" />
+              <img src={bolt} className="card-img-top img-fluid" alt="Product 2" style={{ minHeight: '200px' }} />
               <div className="card-body">
                 <h3 className="card-title">Product 2</h3>
                 <p className="card-text">Description of product 2</p>
