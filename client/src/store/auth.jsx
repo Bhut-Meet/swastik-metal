@@ -13,9 +13,9 @@ export const AuthProvider = ({ children }) => {
 
   // const API = import.meta.env.VITE_BASE_URL;
 
-  // const API = 'https://backend-swastik-metal.onrender.com;
+  const API = 'https://backend-swastik-metal.onrender.com';
   
-  const API = 'http://localhost:5000';
+  // const API = 'http://localhost:5000';
 
   const storeTokenInLocalStorage = (serverToken) => {
     setToken(serverToken);
