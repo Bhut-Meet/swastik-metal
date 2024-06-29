@@ -12,7 +12,8 @@ export const AuthProvider = ({ children }) => {
   // const authorizationToken = ('meet', token);
 
   // const API = import.meta.env.VITE_BASE_URL;
-  // const API = 'https://mernbackend-2cyi.onrender.com';
+
+  // const API = 'https://backend-swastik-metal.onrender.com;
   
   const API = 'http://localhost:5000';
 
