@@ -40,7 +40,7 @@ ul li a.nav-link{
   }
 
   .navbar-collapse {
-    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    transition: max-height 0.2s ease-out, opacity 0.2s ease-out;
     max-height: 0;
     opacity: 0;
     overflow: hidden;
