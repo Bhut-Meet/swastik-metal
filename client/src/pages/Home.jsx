@@ -9,7 +9,7 @@ export const Home = () => {
         <Row>
           {
             AllProducts.map(product => (
-              <Col key={product.id} xs={12} sm={6} md={4} lg={3}>
+              <Col key={product.id} xs={6} sm={6} md={4} lg={3}>
             <Product product={product} />
           </Col>
             ))
