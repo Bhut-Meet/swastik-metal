@@ -3,7 +3,7 @@ import "../components/header.css"
 export const Header = () => {
   return (
     <header className="navbar navbar-expand-lg  fixed-top ">  {/* Use custom class for background color */}
-      <div className="container px-3 bg-custom rounded-5">  {/* Removed redundant bg-danger class */}
+      <div className="container my-3  bg-custom rounded-5 custom-nav">  {/* Removed redundant bg-danger class */}
         <Link to="#" className="navbar-brand" href="#">Swastik Metal</Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
