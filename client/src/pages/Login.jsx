@@ -70,12 +70,12 @@ export const Login = () => {
       <div className='container mb-3'>
         <div className='row'>
           <div className='col-md-6 d-flex justify-content-center align-items-center'>
-            <img
+            {/* <img
               // src={login}
               alt='Login Image'
               className='img-fluid mb-3'
               style={{ maxWidth: '80%', height: 'auto' }}
-            />
+            /> */}
           </div>
           <div className='col-md-6'>
             <div className='card shadow'>

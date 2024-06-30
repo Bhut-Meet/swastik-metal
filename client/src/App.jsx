@@ -9,6 +9,7 @@ import { Product } from './pages/Product';
 import { ProductDetails } from './pages/ProductDetails';
 import { Login } from './pages/Login';
 import { Register } from './pages/Register';
+import { UserProfile } from './pages/profile/UserProfile';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
                 <Route path='/productdetails' element={<ProductDetails/>}/>
                 <Route path='/login' element={<Login/>}/>
                 <Route path='/register' element={<Register/>}/>
+                <Route path='/profile' element={<UserProfile/>}/>
               </Routes>
                 <Footer></Footer>
             </BrowserRouter>

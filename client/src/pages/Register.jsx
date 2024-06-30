@@ -74,13 +74,13 @@ export const Register = () => {
       <div className='container'>
         <div className='row'>
         <div className='col-md-6 d-flex justify-content-center align-items-center'>
-            <img
+            {/* <img
               // src="/images/register.png"
               // src={register}
               alt='Registration Image'
               className='img-fluid mb-3'
               style={{ maxWidth: '80%', height: 'auto' }} // Fix image size
-            />
+            /> */}
           </div>
           <div className='col-md-6'>
             <div className='card shadow'>
