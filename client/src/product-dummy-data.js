@@ -11,7 +11,7 @@ const Products = [
             }
         ],
         category: "veg",
-        image: "/images/margherita.ipg",
+        image: "../../src/assets/bolt.jpg",
         description: "Classic delight with 100% real mozzarella cheese",
     },
     {
@@ -25,7 +25,7 @@ const Products = [
             }
         ],
         category: "vbgvghvhgg",
-        image: "/images/margherita.ipg",
+        image: "../../src/assets/bolt.jpg",
         description: "Classic delight with 100% real mozzarella cheese",
     },
     {
@@ -39,7 +39,7 @@ const Products = [
             }
         ],
         category: "veg",
-        image: "/images/margherita.ipg",
+        image: "../../src/assets/bolt.jpg",
         description: "Classic delight with 100% real mozzarella cheese",
     },
     {
@@ -53,7 +53,7 @@ const Products = [
             }
         ],
         category: "veg",
-        image: "/images/margherita.ipg",
+        image: "../../src/assets/bolt.jpg",
         description: "Classic delight with 100% real mozzarella cheese",
     },
     {
@@ -67,7 +67,7 @@ const Products = [
             }
         ],
         category: "veg",
-        image: "/images/margherita.ipg",
+        image: "../../src/assets/bolt.jpg",
         description: "Classic delight with 100% real mozzarella cheese",
     },
     {
@@ -81,7 +81,7 @@ const Products = [
             }
         ],
         category: "veg",
-        image: "/images/margherita.ipg",
+        image: "../../src/assets/bolt.jpg",
         description: "Classic delight with 100% real mozzarella cheese",
     },
     {
@@ -95,7 +95,7 @@ const Products = [
             }
         ],
         category: "veg",
-        image: "/images/margherita.ipg",
+        image: "../../src/assets/bolt.jpg",
         description: "Classic delight with 100% real mozzarella cheese",
     },
     {
@@ -109,7 +109,7 @@ const Products = [
             }
         ],
         category: "veg",
-        image: "/images/margherita.ipg",
+        image: "../../src/assets/bolt.jpg",
         description: "Classic delight with 100% real mozzarella cheese",
     },
 ]
