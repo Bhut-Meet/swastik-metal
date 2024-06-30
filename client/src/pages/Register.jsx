@@ -85,7 +85,7 @@ export const Register = () => {
           <div className='col-md-6'>
             <div className='card shadow'>
               <div className='card-body'>
-                <h2 className='text-center mb-4'>Registration Form</h2>
+                <h2 className='text-center mb-4' style={{fontWeight:"bold"}}>Registration Form</h2>
                 <form onSubmit={handleSubmit}>
                   <div className='mb-3'>
                     <label htmlFor='username' className='form-label'>
@@ -147,12 +147,12 @@ export const Register = () => {
                       // required
                     />
                   </div>
-                  <button type='submit' className='btn w-100' style={{backgroundColor:"#9333EA", color:"white"}}>
+                  <button type='submit' className='btn w-100' style={{backgroundColor:"#000000", color:"#fefefe", fontWeight:"bold"}}>
                     {isLoading ? 'Loading...' : 'Register Now'} {/* Change button text based on loading state */}
                   </button>
                 </form>
                 <p className="mt-3 text-center">
-                 Already have an account? <NavLink to="/login" style={{color: "#9333EA", textDecoration: 'none'}}>Login  here</NavLink>
+                 Already have an account? <NavLink to="/login" style={{color: "#d29f26", textDecoration: 'none'}}>Login  here</NavLink>
                 </p>
               </div>
             </div>
