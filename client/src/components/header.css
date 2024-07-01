@@ -70,7 +70,7 @@ ul li a.nav-link{
   }
 
 
-  @media (max-width: 399px) {
+  @media (max-width: 576px) {
     body{
         padding-top: 100px;
     }
