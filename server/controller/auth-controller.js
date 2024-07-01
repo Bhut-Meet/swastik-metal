@@ -101,6 +101,39 @@ const user = async (req, res) => {
     }
 } 
 
+// * --------------------------------
+// *  single User edit logic
+// * --------------------------------
+const getUsersById =async(req,res)=>{
+    try {
+        const id = req.params.id;
+        const data = await User.findOne({_id:id},{password:0,isAdmin:0});
+        return res.status(200).json(data);
+    } catch (error) {
+        // next();
+        console.log(error);
+    }
+}
+
+
+// * --------------------------------
+// *  update User edit logic
+// * --------------------------------
+const UpdateUserById =async(req,res)=>{
+    try {
+        const id = req.params.id;
+        const UpdateUserData = req.body;
+
+        const UpdatedData = await User.updateOne({_id:id},{
+            $set:UpdateUserData,
+        }
+    );
+        return res.status(200).json(UpdatedData);
+    } catch (error) {
+        // next(error);
+        console.log(error);
+    }
+}
 
 //user image uploader
 
@@ -124,4 +157,4 @@ const user = async (req, res) => {
 
 
 
-module.exports = {home, register,login,user}
+module.exports = {home, register,login,user,getUsersById,UpdateUserById}

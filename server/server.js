@@ -27,6 +27,9 @@ app.use(express.json()) // middleware for parsing JSON bodies
 
 app.use("/api/auth",corsMiddleware,  authRoutes);
 
+//only use in localhost
+// app.use("/api/auth",  authRoutes);
+
 const PORT =process.env.PORT || 5000;
 connectDb().then(()=>{
     app.listen(PORT, () => {

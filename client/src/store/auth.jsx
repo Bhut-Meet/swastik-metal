@@ -9,9 +9,6 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState('');
   const [isLoading, setIsLoading] = useState(true);
   const authorizationToken = `swastik ${token}`;
-  // const authorizationToken = ('meet', token);
-
-  // const API = import.meta.env.VITE_BASE_URL;
 
   const API = 'https://backend-swastik-metal.onrender.com';
   
@@ -27,7 +24,8 @@ export const AuthProvider = ({ children }) => {
   //user logout functiality
   const LogoutUser = () => {
     setToken('');
-    return localStorage.removeItem('token');
+    setUser('')
+     localStorage.removeItem('token');
   };
 
   // jwt authentication -to get current login user data

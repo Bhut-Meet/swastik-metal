@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
 import "../components/header.css";
 import { useState, useEffect } from "react";
+import { useAuth } from "../store/auth";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
+
+  const { isLoggedIn } = useAuth();
 
   const toggleNavbar = () => {
     if (isOpen) {
@@ -12,7 +15,7 @@ export const Header = () => {
       setTimeout(() => {
         setIsOpen(false);
         setIsClosing(false);
-      }, 300); // This should match the transition duration in CSS
+      }, 300);
     } else {
       setIsOpen(true);
     }
@@ -23,7 +26,7 @@ export const Header = () => {
     setTimeout(() => {
       setIsOpen(false);
       setIsClosing(false);
-    }, 300); // This should match the transition duration in CSS
+    }, 300);
   };
 
   useEffect(() => {
@@ -41,7 +44,7 @@ export const Header = () => {
   return (
     <header className="navbar navbar-expand-lg fixed-top">
       <div className="container my-3 bg-custom rounded-5 custom-nav">
-        <Link to="#" className="navbar-brand">Swastik Metal</Link>
+        <Link to="/" className="navbar-brand">Swastik Metal</Link>
         <button 
           className="navbar-toggler" 
           type="button" 
@@ -61,20 +64,31 @@ export const Header = () => {
               <Link to="/product" className="nav-link" onClick={closeNavbar}>Products</Link>
             </li>
             <li className="nav-item">
-              <Link to="#" className="nav-link" onClick={closeNavbar}>About</Link>
+              <Link to="/about" className="nav-link" onClick={closeNavbar}>About</Link>
             </li>
             <li className="nav-item">
-              <Link to="#" className="nav-link" onClick={closeNavbar}>Contact</Link>
+              <Link to="/contact" className="nav-link" onClick={closeNavbar}>Contact</Link>
             </li>
-            <li className="nav-item">
-              <Link to="/login" className="nav-link" onClick={closeNavbar}>Login</Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/register" className="nav-link" onClick={closeNavbar}>Register</Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/profile" className="nav-link" onClick={closeNavbar}>Profile</Link>
-            </li>
+
+            { isLoggedIn ? (
+              <>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/logout" onClick={closeNavbar}>Logout</Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/profile" onClick={closeNavbar}>Profile</Link>
+                </li>
+              </>
+            ) : (
+              <>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/register" onClick={closeNavbar}>Register</Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/login" onClick={closeNavbar}>Login</Link>
+                </li>
+              </>
+            )}
           </ul>
         </div>
       </div>

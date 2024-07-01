@@ -10,16 +10,17 @@ export const UserProfile = () => {
 
 
 
+
   return (
     <>
-      <div className='container  mt-5 mb-5'>
+      <div className='container bg-white rounded-5  mt-5 mb-5'  style={{boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",}}>
         {/* <h2 className='ms-5'>User Profile</h2> */}
-        <div className='row'>
+        <div className='row p-3'>
           <div className='col-md-4 text-center mb-4 mb-md-0'>
             <div className='mb-3'>
               <img
-                // src='https://w7.pngwing.com/pngs/178/595/png-transparent-user-profile-computer-icons-login-user-avatars-thumbnail.png'
-                src={user.image}
+                src='https://w7.pngwing.com/pngs/178/595/png-transparent-user-profile-computer-icons-login-user-avatars-thumbnail.png'
+                // src={user.image}
                 alt='User Image'
                 className='img-fluid rounded-circle'
                 style={{ width: '150px', height: '150px' }} // Adjust image size as needed
@@ -78,12 +79,24 @@ export const UserProfile = () => {
                 />
               </div>
               <NavLink
+                className='btn btn-success mt-2 px-4'
+                  style={{ textDecoration: 'none', color: 'white' }}
+                  to={`/Profile/user/${user._id}/edit`}
+                >
+                Edit Profile
+                </NavLink>
+              <NavLink
                 to='/logout'
                 style={{ textDecoration: 'none' }}
                 className='btn btn-primary mt-2 ms-2 px-4'
               >
                 Logout
               </NavLink>
+              {user.isAdmin ? (
+                <NavLink to='/admin/users' className='btn btn-primary mt-2 ms-2 px-4'>
+                  Admin
+                </NavLink>
+              ) : null}
 
             </form>
           </div>

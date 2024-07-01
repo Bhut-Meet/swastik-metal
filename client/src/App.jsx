@@ -10,6 +10,8 @@ import { ProductDetails } from './pages/ProductDetails';
 import { Login } from './pages/Login';
 import { Register } from './pages/Register';
 import { UserProfile } from './pages/profile/UserProfile';
+import { Logout } from './pages/Logout';
+import { UserProfileEdit } from './pages/profile/UserProfileEdit';
 
 
 function App() {
@@ -24,7 +26,9 @@ function App() {
                 <Route path='/productdetails' element={<ProductDetails/>}/>
                 <Route path='/login' element={<Login/>}/>
                 <Route path='/register' element={<Register/>}/>
+                <Route path='/logout' element={<Logout/>}/>
                 <Route path='/profile' element={<UserProfile/>}/>
+                <Route path='/Profile/user/:id/edit' element={<UserProfileEdit/>}/>
               </Routes>
                 <Footer></Footer>
             </BrowserRouter>

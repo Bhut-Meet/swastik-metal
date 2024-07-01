@@ -1,14 +1,15 @@
 body{
-    padding-top: 65px;
+    padding-top: 92px;
     background-color: #eaebff;
     /* background-color: #f5f5ff; */
     font-weight: bold;
 }
+
 /* .container {
     margin-left: 2rem;
     margin-right:2rem;
-  } */
-  
+} */
+
 
 
 .container{
@@ -50,17 +51,21 @@ ul li a.nav-link{
     max-height: 500px; /* Adjust this value as needed */
     opacity: 1;
   }
-  
   .navbar-collapse.closing {
     max-height: 0;
-    opacity: 0;
+    opacity: 1;
   }
+
   
   @media (min-width: 992px) {
     .navbar-collapse {
       max-height: none;
       opacity: 1;
       overflow: visible;
+    }
+    .navbar-collapse.closing {
+      max-height: 0;
+      opacity: 1;
     }
   }
 
