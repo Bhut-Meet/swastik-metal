@@ -3,7 +3,7 @@ import { Card, Row, Col } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 
 export const Product = ({ product }) => {
-  const [varients, setVarients] = useState("small");
+  const [varients, setVarients] = useState("1/4");
   const [quantity, setQuantity] = useState(10);
 
   return (
@@ -11,7 +11,7 @@ export const Product = ({ product }) => {
       <Card.Img variant="top" src={product.image} alt={product.name} />
       <Card.Body>
         <Card.Title>{product.name}</Card.Title>
-        <Card.Text>{product.description}</Card.Text>
+        {/* <Card.Text>{product.description}</Card.Text> */}
         <Row className="mb-3">
           <Col xs={12} md={6}>
             <Card.Text>
@@ -49,7 +49,7 @@ export const Product = ({ product }) => {
         <Row>
           <Col xs={12}>
             <Card.Text>
-              <strong>Price:</strong> {product.prices[0][varients] * quantity}
+              <strong>Price:</strong> {product.prices[0][varients] ? product.prices[0][varients] * quantity : "No price available"}
             </Card.Text>
           </Col>
         </Row>

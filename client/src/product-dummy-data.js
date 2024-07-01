@@ -2,12 +2,12 @@ const Products = [
     {
         
         name: "Margherita",
-        varients: ["small", "medium", "large"],
+        varients: ["1/4", "5/16", "7/16"],
         prices: [
             {
-                small: 99,
-                medium: 199,
-                large: 399,
+                "1/4": 99,
+                "5/16": 199,
+                "7/16": 399,
             }
         ],
         category: "veg",
@@ -16,12 +16,12 @@ const Products = [
     },
     {
         name: "tyfv",
-        varients: ["small", "medium", "large"],
+        varients: ["1/4", "5/16", "7/16"],
         prices: [
             {
-                small: 9479,
-                medium: 1929,
-                large: 39479,
+                "1/4": 9479,
+                "5/16": 1929,
+                "7/16": 39479,
             }
         ],
         category: "vbgvghvhgg",
@@ -30,12 +30,12 @@ const Products = [
     },
     {
         name: "Margherita",
-        varients: ["small", "medium", "large"],
+        varients: ["1/4", "5/16", "7/16"],
         prices: [
             {
-                small: 99,
-                medium: 199,
-                large: 399,
+                "1/4": 99,
+                "5/16": 199,
+                "7/16": 399,
             }
         ],
         category: "veg",
@@ -44,12 +44,12 @@ const Products = [
     },
     {
         name: "Margherita",
-        varients: ["small", "medium", "large"],
+        varients: ["1/4", "5/16", "7/16"],
         prices: [
             {
-                small: 99,
-                medium: 199,
-                large: 399,
+                "1/4": 99,
+                "5/16": 199,
+                "7/16": 399,
             }
         ],
         category: "veg",
@@ -58,12 +58,12 @@ const Products = [
     },
     {
         name: "Margherita",
-        varients: ["small", "medium", "large"],
+        varients: ["1/4", "5/16", "7/16"],
         prices: [
             {
-                small: 99,
-                medium: 199,
-                large: 399,
+                "1/4": 99,
+                "5/16": 199,
+                "7/16": 399,
             }
         ],
         category: "veg",
@@ -72,12 +72,12 @@ const Products = [
     },
     {
         name: "Margherita",
-        varients: ["small", "medium", "large"],
+        varients: ["1/4", "5/16", "7/16"],
         prices: [
             {
-                small: 99,
-                medium: 199,
-                large: 399,
+                "1/4": 99,
+                "5/16": 199,
+                "7/16": 399,
             }
         ],
         category: "veg",
@@ -86,12 +86,12 @@ const Products = [
     },
     {
         name: "Margherita",
-        varients: ["small", "medium", "large"],
+        varients: ["1/4", "5/16", "7/16"],
         prices: [
             {
-                small: 99,
-                medium: 199,
-                large: 399,
+                "1/4": 99,
+                "5/16": 199,
+                "7/16": 399,
             }
         ],
         category: "veg",
@@ -100,12 +100,12 @@ const Products = [
     },
     {
         name: "Margherita",
-        varients: ["small", "medium", "large"],
+        varients: ["1/4", "5/16", "7/16"],
         prices: [
             {
-                small: 99,
-                medium: 199,
-                large: 399,
+                "1/4": 99,
+                "5/16": 199,
+                "7/16": 399,
             }
         ],
         category: "veg",

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../store/auth';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
+
 export const UserProfileEdit = () => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false); // Loading state
@@ -15,36 +16,32 @@ export const UserProfileEdit = () => {
   const params = useParams();
   const { user, API } = useAuth();
 
-  // Get single user data
+  useEffect(() => {
+    getSingleUserData();
+  }, []);
+
   const getSingleUserData = async () => {
     try {
+      setIsLoading(true);
       const response = await fetch(`${API}/api/auth/user/${params.id}`, {
         method: 'GET',
       });
       const userData = await response.json();
-      console.log('User single data', userData);
       setData(userData);
+      setIsLoading(false);
     } catch (error) {
       console.log('Error fetching user data:', error);
     }
   };
-
-  useEffect(() => {
-    getSingleUserData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   const handleInput = (e) => {
     const { name, value } = e.target;
     setData({ ...data, [name]: value });
   };
 
-
-
-  // Update user data
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsLoading(true); // Set loading state to true
+    setIsLoading(true);
     try {
       const response = await fetch(`${API}/api/auth/user/update/${params.id}`, {
         method: 'PATCH',
@@ -62,11 +59,9 @@ export const UserProfileEdit = () => {
     } catch (error) {
       console.log('Error updating user:', error);
     } finally {
-      setIsLoading(false); // Set loading state to false
+      setIsLoading(false);
     }
   };
-
-
 
   return (
     <>
