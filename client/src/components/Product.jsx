@@ -9,7 +9,7 @@ function Product({ product }) {
   const [quantity, setQuantity] = useState(10);
 
   return (
-    <Card className='mt-3 mb-5' style={{ width: '100%', maxWidth: '18rem' }}>
+    <Card className='mt-3 mb-5' style={{ width: "18rem" }}>
       <Card.Img variant='top' src={product.image} alt={product.name} />
       <Card.Body>
               <strong>{product.name}</strong>
