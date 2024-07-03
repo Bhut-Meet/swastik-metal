@@ -17,11 +17,9 @@ function ProductList() {
   }, [dispatch, API]);
 
   return (
-    <div className='mt-5'>
-      Popular products
+      <Container>
       {loading && <p>Loading...</p>}
       {error && <p>{error}</p>}
-      <Container>
         <Row>
           {products.map((product) => (
             <Col key={product.id} md={4}>
@@ -30,7 +28,6 @@ function ProductList() {
           ))}
         </Row>
       </Container>
-    </div>
   );
 }
 
