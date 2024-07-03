@@ -13,5 +13,6 @@ router.route("/login").post(authcontrollers.login);
 router.route("/user").get(authMiddleware, authcontrollers.user);
 router.route("/user/:id").get(authcontrollers.getUsersById);
 router.route("/user/update/:id").patch(authcontrollers.UpdateUserById);
+router.route("/getallproduct").get(authcontrollers.AllProductGet);
 
 module.exports = router;

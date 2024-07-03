@@ -1,20 +1,28 @@
-import React, { useState } from 'react';
+/* eslint-disable react/prop-types */
+import  { useState } from 'react';
 import { Card, Row, Col } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 
-export const Product = ({ product }) => {
+// eslint-disable-next-line react/prop-types
+function Product (product) {
   const [varients, setVarients] = useState("1/4");
   const [quantity, setQuantity] = useState(10);
+  
 
   return (
     <Card className="mt-3 mb-5" style={{ width: '100%', maxWidth: '18rem' }}>
       <Card.Img variant="top" src={product.image} alt={product.name} />
-      <Card.Body>
-        <Card.Title>{product.name}</Card.Title>
-        {/* <Card.Text>{product.description}</Card.Text> */}
+      <Card.Body> 
         <Row className="mb-3">
           <Col xs={12} md={6}>
             <Card.Text>
+              <strong>{product.name}</strong>
+            </Card.Text>
+          </Col>
+        </Row>
+        <Row className="mb-3">
+        <Col xs={12} md={6}>
+        <Card.Text>
               <strong>Varients:</strong>
             </Card.Text>
             <select
@@ -46,17 +54,19 @@ export const Product = ({ product }) => {
             </select>
           </Col>
         </Row>
-        <Row>
+        <Row className="text-center">
           <Col xs={12}>
             <Card.Text>
               <strong>Price:</strong> {product.prices[0][varients] ? product.prices[0][varients] * quantity : "No price available"}
             </Card.Text>
           </Col>
         </Row>
-        <NavLink to="#" className="btn btn-primary mt-3">
+        <NavLink to="#" className="btn btn-primary mt-3 w-100">
           Add to cart
         </NavLink>
       </Card.Body>
     </Card>
   );
-};
+}
+
+export default Product;

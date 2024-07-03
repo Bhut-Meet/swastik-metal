@@ -3,6 +3,7 @@
 //* ----------------------------------------------------------------
 
 const User = require("../models/user")
+const AllProductModel = require("../models/allProducts")
 const bcrypt= require("bcryptjs");
 const { application } = require("express");
 
@@ -135,6 +136,18 @@ const UpdateUserById =async(req,res)=>{
     }
 }
 
+
+//get all product
+const AllProductGet = async(req, res)=>{
+    try {
+        const products = await AllProductModel.find({})
+        res.send(products)
+    } catch (error) {
+        res.json({message:error})
+    }
+}
+
+
 //user image uploader
 
 // const addUser = async (req, res) => {
@@ -157,4 +170,4 @@ const UpdateUserById =async(req,res)=>{
 
 
 
-module.exports = {home, register,login,user,getUsersById,UpdateUserById}
+module.exports = {home, register,login,user,getUsersById,UpdateUserById,AllProductGet}

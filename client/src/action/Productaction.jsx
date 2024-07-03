@@ -1,12 +1,19 @@
-import axios from 'axios'
+import axios from 'axios';
 
-export const getAllProduct = () => async (dispatch) =>{
-    dispatch({type:'GET_PRODUCT_REQUEST'})
-    try {
-        const res = await axios.get("/api/auth/getproducts")
-        console.log(res);
-        dispatch({type:'GET_PRODUCT_SUCCESS',payload:res.data})
-    } catch (error) {
-        dispatch({type:'GET_PRODUCT_FAIL',payload:error})
-    }
+// Accept API as a parameter
+export const getAllProducts = (API) => async (dispatch) => {
+  dispatch({ type: 'GET_PRODUCTS_REQUEST' });
+  try {
+    const { data } = await axios.get(`${API}/api/auth/getallproduct`);
+    console.log(data); // Check the structure of the fetched data
+    dispatch({
+      type: 'GET_PRODUCTS_SUCCESS',
+      payload: data,
+    });
+  } catch (error) {
+    dispatch({
+      type: 'GET_PRODUCTS_FAIL',
+      payload: error.message,
+    });
+  }
 };
