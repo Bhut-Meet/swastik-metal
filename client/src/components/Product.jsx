@@ -9,33 +9,26 @@ function Product({ product }) {
   const [quantity, setQuantity] = useState(10);
 
   return (
-    <div className="container">
-      <Row xs={1} md={2} className="g-4">  {/* Responsive grid for mobile */}
-        <ProductCard product={product} varients={varients} quantity={quantity} setVarients={setVarients} setQuantity={setQuantity} />
-        {product.id % 2 !== 0 && <ProductCard product={product} varients={varients} quantity={quantity} setVarients={setVarients} setQuantity={setQuantity} />}  {/* Add second product only on odd-numbered product IDs */}
-      </Row>
-    </div>
-  );
-}
-
-function ProductCard({ product, varients, quantity, setVarients, setQuantity }) {
-  return (
-    <Card className="mt-3 mb-5">
-      <Card.Img variant="top" src={product.image} alt={product.name} />
+    <Card className='mt-3 mb-5' style={{ width: '100%', maxWidth: '18rem' }}>
+      <Card.Img variant='top' src={product.image} alt={product.name} />
       <Card.Body>
-        <Row className="mb-3">
+        <Row className='mb-3'>
           <Col xs={12} md={6}>
             <Card.Text>
               <strong>{product.name}</strong>
             </Card.Text>
           </Col>
         </Row>
-        <Row className="mb-3">
+        <Row className='mb-3'>
           <Col xs={12} md={6}>
             <Card.Text>
               <strong>Varients:</strong>
             </Card.Text>
-            <select className="form-select" value={varients} onChange={(e) => setVarients(e.target.value)}>
+            <select
+              className='form-select'
+              value={varients}
+              onChange={(e) => setVarients(e.target.value)}
+            >
               {product.varients.map((varient) => (
                 <option key={varient} value={varient}>
                   {varient}
@@ -47,7 +40,11 @@ function ProductCard({ product, varients, quantity, setVarients, setQuantity }) 
             <Card.Text>
               <strong>Quantity:</strong>
             </Card.Text>
-            <select className="form-select" value={quantity} onChange={(e) => setQuantity(e.target.value)}>
+            <select
+              className='form-select'
+              value={quantity}
+              onChange={(e) => setQuantity(e.target.value)}
+            >
               {Array.from({ length: 91 }, (_, i) => i + 10).map((i) => (
                 <option key={i} value={i}>
                   {i}
@@ -56,15 +53,17 @@ function ProductCard({ product, varients, quantity, setVarients, setQuantity }) 
             </select>
           </Col>
         </Row>
-        <Row className="text-center">
+        <Row className='text-center'>
           <Col xs={12}>
             <Card.Text>
               <strong>Price:</strong>{' '}
-              {product.prices[0][varients] ? product.prices[0][varients] * quantity : "No price available"}
+              {product.prices[0][varients]
+                ? product.prices[0][varients] * quantity
+                : 'No price available'}
             </Card.Text>
           </Col>
         </Row>
-        <NavLink to="#" className="btn btn-primary mt-3 w-100">
+        <NavLink to='#' className='btn btn-primary mt-3 w-100'>
           Add to cart
         </NavLink>
       </Card.Body>
