@@ -12,13 +12,13 @@ function Product({ product }) {
     <Card className='mt-3 mb-5' style={{ width: '100%', maxWidth: '18rem' }}>
       <Card.Img variant='top' src={product.image} alt={product.name} />
       <Card.Body>
-        <Row className='mb-3'>
+              <strong>{product.name}</strong>
+        {/* <Row className='mb-3'>
           <Col xs={12} md={6}>
             <Card.Text>
-              <strong>{product.name}</strong>
             </Card.Text>
           </Col>
-        </Row>
+        </Row> */}
         <Row className='mb-3'>
           <Col xs={12} md={6}>
             <Card.Text>
