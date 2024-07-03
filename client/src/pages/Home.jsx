@@ -17,17 +17,22 @@ function ProductList() {
   }, [dispatch, API]);
 
   return (
-      <Container>
-      {loading && <p>Loading...</p>}
-      {error && <p>{error}</p>}
-        <Row>
-          {products.map((product) => (
-            <Col key={product.id} md={4}>
-              <Product product={product}></Product>
-            </Col>
-          ))}
-        </Row>
-      </Container>
+    <Container>
+    <h3>Popular Products</h3>
+    {loading ? (
+      <h1>Loading...</h1>
+    ) : error ? (
+      <h1>Error fetching data</h1>
+    ) : (
+      <Row>
+        {products.map((product) => (
+          <Col key={product.id} xs={6} sm={6} md={4} lg={3}>
+            <Product product={product} />
+          </Col>
+        ))}
+      </Row>
+    )}
+  </Container>
   );
 }
 
