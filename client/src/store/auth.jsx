@@ -10,9 +10,9 @@ export const AuthProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
   const authorizationToken = `swastik ${token}`;
 
-  const API = 'https://backend-swastik-metal.onrender.com';
+  // const API = 'https://backend-swastik-metal.onrender.com';
   
-  // const API = 'http://localhost:5000';
+  const API = 'http://localhost:5000';
 
   const storeTokenInLocalStorage = (serverToken) => {
     setToken(serverToken);
