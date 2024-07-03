@@ -24,7 +24,7 @@ function ProductList() {
       <Container>
         <Row>
           {products.map((product) => (
-            <Col key={product.id} md={4}>
+            <Col key={product.id} md={16}>
               <Product product={product}></Product>
             </Col>
           ))}
