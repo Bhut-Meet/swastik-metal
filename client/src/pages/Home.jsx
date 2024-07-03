@@ -1,7 +1,9 @@
-import  { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllProducts } from '../action/Productaction';
 import { useAuth } from '../store/auth';
+import { Col, Container, Row } from 'react-bootstrap';
+import Product from '../components/Product'; // Ensure the import is correct
 
 function ProductList() {
   const productState = useSelector((state) => state.products);
@@ -19,11 +21,15 @@ function ProductList() {
       Popular products
       {loading && <p>Loading...</p>}
       {error && <p>{error}</p>}
-      <>
-        {products.map((product) => (
-          <li key={product.id}>{product.name}</li>
-        ))}
-      </>
+      <Container>
+        <Row>
+          {products.map((product) => (
+            <Col key={product.id} md={4}>
+              <Product product={product}></Product>
+            </Col>
+          ))}
+        </Row>
+      </Container>
     </div>
   );
 }
