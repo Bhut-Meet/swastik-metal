@@ -18,6 +18,9 @@ function Product({ product }) {
               <strong>{product.name}</strong>
             </Card.Text>
           </Col>
+          <Col xs={12} md={6}>
+            {/* Add the second product here */}
+          </Col>
         </Row>
         <Row className='mb-3'>
           <Col xs={12} md={6}>
