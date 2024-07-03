@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 
 // eslint-disable-next-line react/prop-types
 function Product (product) {
-  const [varients, setVarients] = useState("1/4");
+  const [varients, setVarients] = useState(product.varients[0] || '');
   const [quantity, setQuantity] = useState(10);
   
 
