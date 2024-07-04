@@ -61,7 +61,7 @@ export const Header = () => {
               <Link to="/" className="nav-link" onClick={closeNavbar}>Home</Link>
             </li>
             <li className="nav-item">
-              <Link to="/product" className="nav-link" onClick={closeNavbar}>Products</Link>
+              <Link to="/productpage" className="nav-link" onClick={closeNavbar}>Products</Link>
             </li>
             <li className="nav-item">
               <Link to="/about" className="nav-link" onClick={closeNavbar}>About</Link>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import {  useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../store/auth';
 import { useParams } from 'react-router-dom';
@@ -65,6 +65,7 @@ export const UserProfileEdit = () => {
 
   return (
     <>
+    <div className='mx-3'>
       <div className='container py-4 mt-5 mb-5 rounded-5 bg-white'  style={{boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"}}>
         <div className='row justify-content-center'>
           <div className='col-md-6'>
@@ -128,6 +129,7 @@ export const UserProfileEdit = () => {
           </div>
         </div>
       </div>
+    </div>
     </>
   );
 };

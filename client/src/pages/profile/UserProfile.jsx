@@ -13,7 +13,8 @@ export const UserProfile = () => {
 
   return (
     <>
-      <div className='container bg-white rounded-5  mt-5 mb-5'  style={{boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",}}>
+    <div className='mx-3'>
+      <div className='container bg-white rounded-5  mt-4  mb-5'  style={{boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",}}>
         {/* <h2 className='ms-5'>User Profile</h2> */}
         <div className='row p-3'>
           <div className='col-md-4 text-center mb-4 mb-md-0'>
@@ -101,6 +102,7 @@ export const UserProfile = () => {
             </form>
           </div>
         </div>
+      </div>
       </div>
     </>
   );

@@ -1,5 +1,5 @@
-export const Product =()=>{
+export const ProductPage =()=>{
     return<>
-    <h1>product</h1>
+    <h1 className="mt-5">products Page</h1>
     </>
 }
