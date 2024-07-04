@@ -17,7 +17,7 @@ function ProductList() {
   }, [dispatch, API]);
 
   return (
-    <Container>
+    <Container className='mt-3 '>
     <h3>Popular Products</h3>
     {loading ? (
       <h1>Loading...</h1>
