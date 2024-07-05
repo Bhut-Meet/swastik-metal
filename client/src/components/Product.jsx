@@ -88,12 +88,20 @@ import { useState } from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import { CiShoppingCart } from "react-icons/ci";
+import { useDispatch, } from 'react-redux';
+import { AddToCart } from '../action/CartAction';
 
 function Product({ product }) {
   // Remove unnecessary state variables: quantity and varients
   // These can be handled externally if needed
     const [varients, setVarients] = useState(product.varients[0] || '');
   const [quantity, setQuantity] = useState(10);
+
+  const dispatch = useDispatch()
+
+  const addToCartHandler = () => {
+    dispatch(AddToCart(product, varients, quantity));
+  }
 
   return (
     <div className="product-container d-flex flex-wrap justify-content-center">
@@ -122,7 +130,7 @@ function Product({ product }) {
                 )}
               </div>
               <div>
-                <NavLink to="#" className="btn btn-primary p-1 rounded-3.9" style={{ boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" }}> {/* Style button */}
+                <NavLink onClick={addToCartHandler} className="btn btn-primary p-1 rounded-3.9" style={{ boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" }}> {/* Style button */}
                   <CiShoppingCart style={{ fontSize: "1.5rem", color: "#fff",}} /> {/* Adjust icon style */}
                 </NavLink>
               </div>

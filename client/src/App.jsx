@@ -12,6 +12,7 @@ import { UserProfile } from './pages/profile/UserProfile';
 import { Logout } from './pages/Logout';
 import { UserProfileEdit } from './pages/profile/UserProfileEdit';
 import { ProductPage } from './pages/Product';
+import { Cart } from './pages/cart/Cart';
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
                 <Route path='/logout' element={<Logout/>}/>
                 <Route path='/profile' element={<UserProfile/>}/>
                 <Route path='/Profile/user/:id/edit' element={<UserProfileEdit/>}/>
+                <Route path='/cart' element={<Cart/>}/>
               </Routes>
                 {/* <Footer></Footer> */}
             </BrowserRouter>

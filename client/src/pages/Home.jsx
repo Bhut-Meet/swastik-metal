@@ -2,14 +2,14 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllProducts } from '../action/Productaction';
 import { useAuth } from '../store/auth';
-import { Col, Container, Row, Button } from 'react-bootstrap';
+import { Col, Container, Row, Button, Badge } from 'react-bootstrap';
 import { FaShoppingCart } from 'react-icons/fa'; // Import cart icon
 import Product from '../components/Product';
-// import './ProductList.css'; // Import CSS for custom styles
+import { Link } from 'react-router-dom';
 
 function ProductList() {
   const productState = useSelector((state) => state.products);
-  
+  const cartState = useSelector((state) => state.CartReducer);
   const dispatch = useDispatch();
   const { API } = useAuth();
   const { products, loading, error } = productState;
@@ -34,22 +34,43 @@ function ProductList() {
           ))}
         </Row>
       )}
-      <Button
-        variant="primary"
-        className="floating-cart-button"
-        style={{position: "fixed",
-          bottom: "20px",
-          right: "20px",
-          zIndex: "1000",
-          borderRadius: "50%",
-          width: "60px",
-          height: "60px",
-          // display: "flex",
-          justifyContent : "center",
-          alignItems: "center"}}
-      >
-        <FaShoppingCart size={24} />
-      </Button>
+      <Link to="/Cart">
+        <Button
+        variant="none"
+          style={{
+            position: "fixed",
+            bottom: "20px",
+            right: "20px",
+            zIndex: "1000",
+            borderRadius: "50%",
+            width: "60px",
+            height: "60px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            backgroundColor:"#fdfdff",
+            boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
+          }}
+        >
+          <Badge
+            bg="danger"
+            style={{
+              position: "absolute",
+              top: "5px",
+              right: "5px",
+              borderRadius: "50%",
+              width: "20px",
+              height: "20px",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            {cartState.cartItems.length}
+          </Badge>
+          <FaShoppingCart size={24} />
+        </Button>
+      </Link>
     </Container>
   );
 }
