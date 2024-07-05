@@ -13,9 +13,9 @@ function corsMiddleware(req, res, next) {
   }
 
 const corsOptions={
-    // origin: ["http://localhost:5173"],
+    origin: ["http://localhost:5173"],
     // origin: ["http://localhost:5173", "https://swastik-metal.vercel.app"],
-    origin: "https://swastik-metal.vercel.app",
+    // origin: "https://swastik-metal.vercel.app",
     // origin:"https://websitedevelopmentservices.vercel.app", // Replace with allowed origins from environment variable or default to Vercel domain
     methods: ["GET", "HEAD","PUT","PATCH","POST","DELETE"],
     Credential:true,
@@ -25,10 +25,10 @@ app.use(cors(corsOptions));
 
 app.use(express.json()) // middleware for parsing JSON bodies
 
-app.use("/api/auth",corsMiddleware,  authRoutes);
+// app.use("/api/auth",corsMiddleware,  authRoutes);
 
 // only use in localhost
-// app.use("/api/auth",  authRoutes);
+app.use("/api/auth",  authRoutes);
 
 const PORT =process.env.PORT || 5000;
 connectDb().then(()=>{

@@ -3,7 +3,7 @@ import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {Header} from './components/Header';
-import {Footer} from './components/Footer';
+// import {Footer} from './components/Footer';
 import Home from './pages/Home';
 import { ProductDetails } from './pages/ProductDetails';
 import { Login } from './pages/Login';
@@ -29,7 +29,7 @@ function App() {
                 <Route path='/profile' element={<UserProfile/>}/>
                 <Route path='/Profile/user/:id/edit' element={<UserProfileEdit/>}/>
               </Routes>
-                <Footer></Footer>
+                {/* <Footer></Footer> */}
             </BrowserRouter>
     </>
   )
