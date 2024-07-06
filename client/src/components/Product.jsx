@@ -88,19 +88,19 @@ import { useState } from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import { CiShoppingCart } from "react-icons/ci";
-import { useDispatch, } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { AddToCart } from '../action/CartAction';
 
 function Product({ product }) {
   // Remove unnecessary state variables: quantity and varients
   // These can be handled externally if needed
-    const [varients, setVarients] = useState(product.varients[0] || '');
-  const [quantity, setQuantity] = useState(10);
+    const [varient] = useState(product.varients[0] || '');
+  const [quantity] = useState(10);
 
   const dispatch = useDispatch()
 
   const addToCartHandler = () => {
-    dispatch(AddToCart(product, varients, quantity));
+    dispatch(AddToCart(product, quantity, varient));
   }
 
   return (
@@ -119,18 +119,18 @@ function Product({ product }) {
               {/* {product.description && <Card.Text>{product.description}</Card.Text>} Display description if available */}
             </Col>
             <Col xs={12} md={12} className="d-flex justify-content-between align-items-center"> {/* Align price and button */}
-              <div>
+              <div className='me-2'>
                 {/* Display price if available */}
                 {product.prices && (
                   <span className="mr-2">
-                    <strong>Price:</strong> {product.prices[0][varients]
-                ? product.prices[0][varients] * quantity
+                    <strong>Rs :-</strong> {product.prices[0][varient]
+                ? product.prices[0][varient] * quantity
                 : 'No price available'}
                   </span>
                 )}
               </div>
               <div>
-                <NavLink onClick={addToCartHandler} className="btn btn-primary p-1 rounded-3.9" style={{ boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" }}> {/* Style button */}
+                <NavLink onClick={addToCartHandler} className="btn btn-primary p-1 rounded-3.9 " style={{ boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" }}> {/* Style button */}
                   <CiShoppingCart style={{ fontSize: "1.5rem", color: "#fff",}} /> {/* Adjust icon style */}
                 </NavLink>
               </div>

@@ -1,6 +1,4 @@
-*{
-  font-weight: bold;
-}
+
 body{
     padding-top: 92px;
     background-color: #eaebff;
@@ -35,12 +33,22 @@ ul li a.nav-link{
     color: #242426 !important;
   }
   
+  .nav-item {
+    display: flex;
+    justify-content: center; /* Center links horizontally */
+    align-items: center; /* Optional: Vertically align if needed */
+  }
+  
   .nav-link {
     color: black !important;
   }
   
   .nav-link:hover {
-    color: blue!important;
+    color: rgb(95, 95, 132)!important;
+  }
+
+  .cartnav-link:hover {
+    color: red!important;
   }
 
   .navbar-collapse {

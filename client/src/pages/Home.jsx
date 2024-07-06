@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import  { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllProducts } from '../action/Productaction';
 import { useAuth } from '../store/auth';
@@ -9,8 +9,8 @@ import { Link } from 'react-router-dom';
 
 function ProductList() {
   const productState = useSelector((state) => state.products);
-  const cartState = useSelector((state) => state.CartReducer);
   const dispatch = useDispatch();
+  const cartState = useSelector((state) => state.CartReducer);
   const { API } = useAuth();
   const { products, loading, error } = productState;
 
@@ -27,8 +27,8 @@ function ProductList() {
         <h1>Error fetching data</h1>
       ) : (
         <Row>
-          {products.map((product) => (
-            <Col key={product.id} xs={6} sm={6} md={4} lg={3}>
+          {products.map((product,index) => (
+            <Col key={index} xs={6} sm={6} md={4} lg={3}>
               <Product product={product} />
             </Col>
           ))}
@@ -46,6 +46,7 @@ function ProductList() {
             width: "60px",
             height: "60px",
             display: "flex",
+            // marginRight:"220px",
             justifyContent: "center",
             alignItems: "center",
             backgroundColor:"#fdfdff",
