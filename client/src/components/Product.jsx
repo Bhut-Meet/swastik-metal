@@ -83,7 +83,6 @@
 
 
 /* eslint-disable react/prop-types */
-import React from 'react';
 import { useState } from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
@@ -115,7 +114,7 @@ function Product({ product }) {
         <Card.Body className="p-3"> {/* Add padding for content */}
           <Row>
             <Col xs={12} md={6}>
-              <Card.Title>{product.name}</Card.Title>
+              <Card.Title><h4>{product.name}</h4></Card.Title>
               {/* {product.description && <Card.Text>{product.description}</Card.Text>} Display description if available */}
             </Col>
             <Col xs={12} md={12} className="d-flex justify-content-between align-items-center"> {/* Align price and button */}
@@ -123,7 +122,7 @@ function Product({ product }) {
                 {/* Display price if available */}
                 {product.prices && (
                   <span className="mr-2">
-                    <strong>Rs :-</strong> {product.prices[0][varient]
+                    <span>Rs:</span> {product.prices[0][varient]
                 ? product.prices[0][varient] * quantity
                 : 'No price available'}
                   </span>

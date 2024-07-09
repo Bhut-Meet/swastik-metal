@@ -34,7 +34,7 @@ function ProductList() {
           ))}
         </Row>
       )}
-      <Link to="/Cart">
+      <Link to="/cart">
         <Button
         variant="none"
           style={{

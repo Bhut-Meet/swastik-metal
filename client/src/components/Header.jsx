@@ -107,7 +107,6 @@ import { Link } from "react-router-dom";
 import "../components/header.css";
 import { useState, useEffect } from "react";
 import { useAuth } from "../store/auth";
-import { NavLink } from "react-bootstrap";
 import { CiShoppingCart } from "react-icons/ci";
 
 export const Header = () => {
@@ -178,15 +177,20 @@ export const Header = () => {
                   </Link>
                 </li>
                 <li className="nav-item">
+                  <Link className="nav-link" to="/allproducts" onClick={closeNavbar}>
+                    All Products
+                  </Link>
+                </li>
+                <li className="nav-item">
                   <Link className="nav-link" to="/profile" onClick={closeNavbar}>
                     Profile
                   </Link>
                 </li>
                 <li className="nav-item d-flex align-items-center">
-                  <NavLink className="cartnav-link p-2 rounded-5" style={{ boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" }}>
+                  <Link to="/cart" className="nav-link p-2 rounded-5"  style={{ boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" }}>
                     <CiShoppingCart style={{ fontSize: "1.5rem", marginRight: "5px" }} /> {/* Adjust icon style */}
                     Cart
-                  </NavLink>
+                  </Link>
                 </li>
               </>
             ) : (
