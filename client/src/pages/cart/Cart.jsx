@@ -25,7 +25,7 @@ export const Cart = () => {
   };
 
   return (
-    <Container className='py-5'>
+    <Container className='py-4'>
       <h1 className='mb-4 text-center'>My Cart</h1>
 
       {cartItems.length === 0 ? (
@@ -164,7 +164,7 @@ export const Cart = () => {
                 </ListGroup>
               </Card.Body>
               <Card.Footer>
-                <Button variant='primary' size='lg' block="true">
+                <Button variant='primary' size='md' block="true">
                   Proceed to Checkout
                 </Button>
               </Card.Footer>

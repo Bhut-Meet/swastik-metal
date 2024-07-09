@@ -13,6 +13,13 @@ import { Logout } from './pages/Logout';
 import { UserProfileEdit } from './pages/profile/UserProfileEdit';
 import { ProductPage } from './pages/Product';
 import { Cart } from './pages/cart/Cart';
+// import AdminScreen from './pages/Admin/AdminScreen';
+import {UserList} from './components/Admin/UserList';
+import AllProducts from './components/Admin/AllProducts';
+import OrderList from './components/Admin/OrderList';
+import AddProduct from './components/Admin/AddProduct';
+import { AdminNavbar } from './components/Admin/AdminNavbar';
+import {Error} from './pages/Error';
 
 function App() {
 
@@ -21,6 +28,7 @@ function App() {
             <BrowserRouter>
                 <Header></Header>
               <Routes>
+              <Route path='*' element={<Error></Error>} />
                 <Route path='/' element={<Home/>}/>
                 <Route path='/allproducts' element={<ProductPage/>}/>
                 <Route path='/productdetails' element={<ProductDetails/>}/>
@@ -30,6 +38,20 @@ function App() {
                 <Route path='/profile' element={<UserProfile/>}/>
                 <Route path='/Profile/user/:id/edit' element={<UserProfileEdit/>}/>
                 <Route path='/cart' element={<Cart/>}/>
+                {/* <Route path="/admin" element={<AdminScreen />}>
+                  <Route index element={<UserList />} /> 
+                  <Route path="users" element={<UserList />} />
+                  <Route path="products" element={<AllProducts />} />
+                  <Route path="orders" element={<OrderList />} />
+                  <Route path="add-product" element={<AddProduct />} />
+                  </Route> */}
+              <Route path="/admin/" element={<AdminNavbar></AdminNavbar>}>
+                  <Route index element={<UserList />} /> 
+                  <Route path="userlist" element={<UserList />} />
+                  <Route path="products" element={<AllProducts />} />
+                  <Route path="orders" element={<OrderList />} />
+                  <Route path="addproduct" element={<AddProduct />} />
+              </Route>
               </Routes>
                 {/* <Footer></Footer> */}
             </BrowserRouter>

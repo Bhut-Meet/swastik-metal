@@ -94,7 +94,7 @@ export const UserProfile = () => {
                 Logout
               </NavLink>
               {user.isAdmin ? (
-                <NavLink to='/admin/users' className='btn btn-primary mt-2 ms-2 px-4'>
+                <NavLink to='/admin' className='btn btn-primary mt-2 ms-2 px-4'>
                   Admin
                 </NavLink>
               ) : null}

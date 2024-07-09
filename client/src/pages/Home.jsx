@@ -19,7 +19,7 @@ function ProductList() {
   }, [dispatch, API]);
 
   return (
-    <Container className='mt-3'>
+    <Container className='mt-3 mb-5'>
       <h3>Popular Products</h3>
       {loading ? (
         <h1>Loading...</h1>
@@ -28,7 +28,7 @@ function ProductList() {
       ) : (
         <Row>
           {products.map((product,index) => (
-            <Col key={index} xs={6} sm={6} md={4} lg={3}>
+            <Col key={index} xs={6} sm={6} md={4} lg={3} className='mb-3'>
               <Product product={product} />
             </Col>
           ))}
