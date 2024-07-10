@@ -362,6 +362,11 @@ export const Header = () => {
               </>
             ) : (
               <>
+              <li className="nav-item">
+                  <Link className="nav-link" to="/" onClick={closeNavbar}>
+                    Home
+                  </Link>
+                </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/register" onClick={closeNavbar}>
                     Register

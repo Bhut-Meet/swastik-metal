@@ -1,12 +1,5 @@
-import {
-  Container,
-  Row,
-  Col,
-  Card,
-  Button,
-  Form,
-  ListGroup,
-} from 'react-bootstrap';
+
+import { Container, Row, Col, Card, Button, Form, ListGroup} from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import { FaCircleMinus } from 'react-icons/fa6';
 import { FaPlusCircle, FaTrash } from 'react-icons/fa';
@@ -25,6 +18,8 @@ export const Cart = () => {
   };
 
   return (
+    <>
+    
     <Container className='py-4'>
       <h1 className='mb-4 text-center'>My Cart</h1>
 
@@ -132,8 +127,7 @@ export const Cart = () => {
                           className='text-danger'
                           onClick={() => dispatch(deleteFromCart(item))}
                         >
-                          <FaTrash />{' '}
-                          <span>Remove</span>
+                          <FaTrash /> <span>Remove</span>
                         </Button>
                       </div>
                     </Col>
@@ -164,7 +158,7 @@ export const Cart = () => {
                 </ListGroup>
               </Card.Body>
               <Card.Footer>
-                <Button variant='primary' size='md' block="true">
+                <Button variant='primary' size='md' block='true'>
                   Proceed to Checkout
                 </Button>
               </Card.Footer>
@@ -173,5 +167,6 @@ export const Cart = () => {
         </Row>
       )}
     </Container>
+    </>
   );
 };

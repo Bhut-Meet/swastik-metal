@@ -26,6 +26,7 @@ function ProductList() {
       ) : error ? (
         <h1>Error fetching data</h1>
       ) : (
+        
         <Row>
           {products.map((product,index) => (
             <Col key={index} xs={6} sm={6} md={4} lg={3} className='mb-3'>

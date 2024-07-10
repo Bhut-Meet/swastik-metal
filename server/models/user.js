@@ -22,7 +22,8 @@ const userSchema = new mongoose.Schema({
     isAdmin:{
         type:Boolean,
         default:false,
-    } // Store the URL of the profile image
+    },// Store the URL of the profile image
+    
 })
 
 // secure the password with the bcrypt
